@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="components/navigation.css">
         <link rel="stylesheet" href="components/forms.css">
         <link rel="stylesheet" href="components/status.css">
+        <link rel="stylesheet" href="components/lists.css">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
@@ -211,6 +212,59 @@
                     <span class="status status-warning">Venter på svar</span>
                     <span class="status status-danger">Avvist</span>
 
+
+                    <!--Lists-->
+                    <div class="list">
+
+                        <div class="list-item">
+                            <div class="list-item-header">
+                                <span>12. september</span>
+                                <span>14:00–15:00</span>
+                            </div>
+
+                            <div class="list-item-title">
+                                Prosjektstatus
+                            </div>
+
+                            <div class="list-item-meta">
+                                Møterom A
+                            </div>
+                        </div>
+
+
+                        <div class="list-item selected">
+                            <div class="list-item-header">
+                                <span>14. september</span>
+                                <span>09:00–10:00</span>
+                            </div>
+
+                            <div class="list-item-title">
+                                Ukesmøte
+                            </div>
+
+                            <div class="list-item-meta">
+                                Teams
+                            </div>
+                        </div>
+
+
+                        <div class="list-item">
+                            <div class="list-item-header">
+                                <span>17. september</span>
+                                <span>12:00–13:00</span>
+                            </div>
+
+                            <div class="list-item-title">
+                                Planlegging
+                            </div>
+
+                            <div class="list-item-meta">
+                                Møterom B
+                            </div>
+                        </div>
+
+                    </div>
+
                 </main>    
             </div>
 
@@ -222,12 +276,28 @@
 
         <!--Profile dropdown-->
         <script>
-    const profileButton = document.getElementById("profileButton");
-    const profileMenu = document.getElementById("profileMenu");
+            const profileButton = document.getElementById("profileButton");
+            const profileMenu = document.getElementById("profileMenu");
 
-    profileButton.addEventListener("click", function () {
-        profileMenu.classList.toggle("open");
-    });
-</script>
+            profileButton.addEventListener("click", function () {
+                profileMenu.classList.toggle("open");
+            });
+
+            const listItems = document.querySelectorAll(".list-item");
+
+            listItems.forEach(function (item) {
+
+                item.addEventListener("click", function () {
+
+                    listItems.forEach(function (item) {
+                        item.classList.remove("selected");
+                    });
+
+                    item.classList.add("selected");
+
+                });
+
+            });
+        </script>
     </body>
 </html>
