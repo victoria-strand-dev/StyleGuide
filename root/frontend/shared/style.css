@@ -74,9 +74,28 @@ main {
 
 .content {
     flex: 1;
-
     display: flex;
 }
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: var(--space-3);
+
+    border-top: 1px solid var(--color-grey-medium);
+
+    font-size: var(--font-size-sm);
+    color: var(--color-text-dark);
+}
+
+#footer-icon img {
+    width: auto;
+    height: 20px;
+    padding-left: 5px;
+}
+
 
 h1 {
     font-size: var(--font-size-2xl);
