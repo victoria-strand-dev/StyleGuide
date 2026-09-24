@@ -16,8 +16,6 @@
 /*----------------Input fields----------------*/
 .form-input,
 .form-textarea {
-    width: 100%;
-
     padding: var(--space-2) var(--space-3);
 
     background-color: var(--color-background);
