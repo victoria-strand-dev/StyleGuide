@@ -30,13 +30,13 @@
 
                 <!--Profile-->
                 <div class="profile">
-                    <button class="btn btn-icon" id="profileButton" aria-label="Profil">
-                        <i class="bi bi-person-circle"></i>
+
+                    <button class="profile-button" id="profileButton" aria-label="Profil">
+                        <i class="bi bi-person-circle profile-icon"></i>
                     </button>
 
-                    <!--Profile dropdown-->
                     <div class="profile-menu" id="profileMenu">
-                        <button class="profile-menu-item" id="editProfileButton">
+                        <button class="profile-menu-item">
                             <i class="bi bi-pencil"></i>
                             Endre profil
                         </button>
@@ -46,6 +46,7 @@
                             Logg ut
                         </button>
                     </div>
+
                 </div>
 
             </header>
@@ -212,12 +213,12 @@
 
         <!--Profile dropdown-->
         <script>
-            const profileButton = document.getElementById("profileButton");
-            const profileMenu = document.getElementById("profileMenu");
+    const profileButton = document.getElementById("profileButton");
+    const profileMenu = document.getElementById("profileMenu");
 
-            profileButton.addEventListener("click", function () {
-                profileMenu.classList.toggle("open");
-            });
-        </script>
+    profileButton.addEventListener("click", function () {
+        profileMenu.classList.toggle("open");
+    });
+</script>
     </body>
 </html>

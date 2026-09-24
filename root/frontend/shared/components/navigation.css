@@ -1,3 +1,6 @@
+/*==================================================
+                    TOPBAR
+==================================================*/
 
 .topbar {
     display: flex;
@@ -19,8 +22,30 @@
 }
 
 
+/*==================================================
+                    PROFILE
+==================================================*/
+
 .profile {
     position: relative;
+}
+
+
+/*----------------Profile button----------------*/
+
+.profile-button {
+    padding: 0;
+
+    background: none;
+    color: var(--color-text-dark);
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: var(--font-size-2xl);
 }
 
 
@@ -41,9 +66,6 @@
     border: 1px solid var(--color-grey-medium);
     border-radius: var(--border-radius-md);
 }
-
-
-/*----------------Open profile menu----------------*/
 
 .profile-menu.open {
     display: block;
@@ -70,14 +92,18 @@
     cursor: pointer;
 }
 
-
-/*----------------Profile menu hover----------------*/
-
 .profile-menu-item:hover {
     background-color: var(--color-grey-light);
 }
 
+.profile-menu-item:active {
+    background-color: var(--color-grey-medium);
+}
 
+
+/*==================================================
+                    SIDEBAR
+==================================================*/
 
 .sidebar {
     width: 100px;
@@ -88,11 +114,15 @@
 }
 
 
+/*----------------Navigation----------------*/
+
 .nav {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
 }
+
+
 /*----------------Navigation item----------------*/
 
 .nav-item {
@@ -110,15 +140,9 @@
     border-radius: var(--border-radius-sm);
 }
 
-
-/*----------------Navigation hover----------------*/
-
 .nav-item:hover {
     background-color: var(--color-grey-light);
 }
-
-
-/*----------------Active navigation item----------------*/
 
 .nav-item.active {
     color: var(--color-primary);
@@ -126,14 +150,11 @@
 }
 
 
-/*----------------Navigation icons----------------*/
+/*----------------Navigation content----------------*/
 
 .nav-item i {
     font-size: var(--font-size-xl);
 }
-
-
-/*----------------Navigation text----------------*/
 
 .nav-item span {
     font-size: var(--font-size-xs);

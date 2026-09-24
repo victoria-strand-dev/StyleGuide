@@ -1,0 +1,9 @@
+/*----------------Base icon----------------*/
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--font-size-lg);
+    line-height: 1;
+}
