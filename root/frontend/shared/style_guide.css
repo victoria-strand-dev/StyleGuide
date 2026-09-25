@@ -74,6 +74,8 @@ main {
     border-radius: 5px;
 }
 
+
+
 main h1, h3 {
     color: var(--color-grey-light);
 }
@@ -85,6 +87,19 @@ main h1, h3 {
 .card {
     background-color: var(--color-background);
 }
+
+.topbar {
+    background-color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-text-dark);
+}
+
+.sidebar {
+    background-color: var(--color-primary-light);
+    border-right: 1px solid var(--color-primary-light);
+}
+
+
+
 
 .app {
     min-height: 100vh;

@@ -16,9 +16,6 @@
         <link rel="stylesheet" href="components/lists.css">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
-        <!-- Style guide -->
-        <link rel="stylesheet" href="style_guide.css">
 
         <!-- Prism syntax highlighting -->
         <link rel="stylesheet"
@@ -27,6 +24,11 @@
         <!-- Prism line numbers -->
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+        
+        
+        <!-- Style guide -->
+        <link rel="stylesheet" href="style_guide.css">
+
     </head>
 
     <body>
@@ -101,6 +103,27 @@
                 <main>
                     <!--Site name-->
                     <h1>STYLE GUIDE</h1>
+
+                    <!---------------------------------------------Imports---------------------------------------------->
+                    <section id="imports">
+                        <h3>Imports</h3>
+
+                        <script type="text/plain"
+                                class="manual-code"
+                                data-language="markup">
+                        <link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/components/buttons.css">
+<link rel="stylesheet" href="../shared/components/cards.css">
+<link rel="stylesheet" href="../shared/components/icons.css">
+<link rel="stylesheet" href="../shared/components/navigation.css">
+<link rel="stylesheet" href="../shared/components/forms.css">
+<link rel="stylesheet" href="../shared/components/status.css">
+<link rel="stylesheet" href="../shared/components/lists.css">
+                        </script>
+
+                    </section>
+
+
                     <!---------------------------------------------Icons---------------------------------------------->
                     <section id="icons">
                         <h3>Ikoner</h3>
@@ -477,6 +500,61 @@
 
                     item.classList.add("selected");
 
+                });
+
+            });
+
+            document.querySelectorAll(".manual-code").forEach(function (example) {
+
+                const html = example.textContent.trim();
+                const language = example.dataset.language || "markup";
+
+                const codeExample = document.createElement("div");
+                codeExample.className = "code-example";
+
+                codeExample.innerHTML = `
+                    <div class="code-header">
+                        <span>${language.toUpperCase()}</span>
+
+                        <button class="code-copy" type="button">
+                            <i class="bi bi-copy"></i> Kopier
+                        </button>
+                    </div>
+
+                    <div class="code-content">
+                        <pre class="line-numbers"><code></code></pre>
+                    </div>
+
+                    <button class="code-expand" type="button">
+                        Vis all kode
+                    </button>
+                `;
+
+                const code = codeExample.querySelector("code");
+
+                code.className = "language-" + language;
+                code.textContent = html;
+
+                example.replaceWith(codeExample);
+
+                Prism.highlightElement(code);
+
+                const copyButton = codeExample.querySelector(".code-copy");
+
+                copyButton.addEventListener("click", function () {
+                    navigator.clipboard.writeText(html);
+                    copyButton.textContent = "Kopiert!";
+                });
+
+                const expandButton = codeExample.querySelector(".code-expand");
+
+                expandButton.addEventListener("click", function () {
+                    codeExample.classList.toggle("expanded");
+
+                    expandButton.textContent =
+                        codeExample.classList.contains("expanded")
+                            ? "Skjul kode"
+                            : "Vis all kode";
                 });
 
             });
