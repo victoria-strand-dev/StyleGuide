@@ -54,7 +54,7 @@
 body {
     font-family: system-ui, sans-serif;
     margin: 0;
-    background-color: var(--color-background);
+    background-color: #171b22;
     color: var(--color-text-dark);
 }
 
@@ -66,12 +66,24 @@ main {
     flex-direction: column;
     gap: var(--space-4);
 
-    background-color: var(--color-background);
+    background-color: #171b22;
 
     padding: var(--space-4);
     margin: 3% 4% 4% 4%;
 
     border-radius: 5px;
+}
+
+main h1, h3 {
+    color: var(--color-grey-light);
+}
+
+.card h3 {
+    color: var(--color-text-dark);
+}
+
+.card {
+    background-color: var(--color-background);
 }
 
 .app {
@@ -130,4 +142,98 @@ p {
 
 button, input, textarea, select {
     font: inherit;
+}
+
+
+/*========================================
+              CODE EXAMPLES
+========================================*/
+
+.code-example {
+    margin-top: var(--space-3);
+    border: 1px solid var(--color-grey-medium);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+/* Header */
+
+.code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-2) var(--space-3);
+
+    background-color: #252a33;
+    color: white;
+
+    font-size: var(--font-size-sm);
+}
+
+/* Copy button */
+
+.code-copy {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.code-copy:hover {
+    color: var(--color-primary-light);
+}
+
+/* Code area */
+
+.code-content {
+    max-height: 180px;
+    overflow: hidden;
+    background-color: #171b22;
+}
+
+.code-example.expanded .code-content {
+    max-height: none;
+    overflow-x: auto;
+}
+
+/* Override Prism defaults */
+
+.code-content pre[class*="language-"] {
+    margin: 0;
+    padding: var(--space-3);
+    background: transparent;
+    font-size: var(--font-size-sm);
+}
+
+/* Expand button */
+
+.code-expand {
+    display: block;
+    width: 100%;
+
+    padding: var(--space-2);
+
+    background-color: #252a33;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.code-expand:hover {
+    background-color: #343b47;
+}
+
+.component-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+}
+
+/* Button examples */
+.button-examples {
+    align-items: flex-start;
 }
